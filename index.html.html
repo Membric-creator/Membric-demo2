@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membric</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8f9ff, #eef2ff);
+    color: #111;
+}
+
+/* container */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* glass card */
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* poster */
+.poster {
+    width: 100%;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+/* lock button */
+.lock {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lock:hover {
+    transform: scale(1.05);
+}
+
+/* hidden content */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* text blocks */
+.block {
+    margin: 30px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.small {
+    font-size: 13px;
+    color: #666;
+}
+
+.signature {
+    margin-top: 40px;
+    font-size: 13px;
+    color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- Replace with your poster -->
+        <img src="https://via.placeholder.com/800x1000" class="poster">
+
+        <div class="small">This memory is hidden</div>
+
+        <button class="lock" onclick="unlock()">Tap to reveal</button>
+
+        <div id="content" class="hidden">
+
+            <div class="block small">You found it.</div>
+
+            <div class="block">
+                This looks like a poster.<br>
+                It isn’t.
+            </div>
+
+            <div class="block">
+                Every image you see…<br>
+                was once a moment someone lived.
+            </div>
+
+            <div class="block">
+                What if your story didn’t stay on your phone?
+            </div>
+
+            <div class="block">
+                What if it stayed somewhere real?
+            </div>
+
+            <div class="signature">— Membric</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function unlock() {
+    document.getElementById("content").classList.add("show");
+    document.querySelector(".lock").style.display = "none";
+}
+</script>
+
+</body>
+</html>
